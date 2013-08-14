@@ -12,7 +12,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 600px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -46,7 +46,6 @@ header {
 header h1 {
   font-size: 30px;
   line-height: 1.5;
-  margin: 0 0 0 -40px;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #b5e853;
@@ -55,23 +54,22 @@ header h1 {
                0 0 10px rgba(181, 232, 83, 0.1);
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
+  text-align: center;
 }
-
-header h1:before {
-  content: "./ ";
-  font-size: 24px;
-}
-
 header h2 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
+  text-align: center;
 }
 
+#downloads {
+    text-align: center;
+}
 #downloads .btn {
-  display: inline-block;
+  
   text-align: center;
-  margin: 0;
+  margin: 10px auto 0;
 }
 
 /* Main Content
@@ -80,6 +78,7 @@ header h2 {
 #main_content {
   width: 100%;
   -webkit-font-smoothing: antialiased;
+  text-align: center;
 }
 section img {
   max-width: 100%
@@ -244,4 +243,23 @@ a {
 
 .cf {
   zoom:1;
+}
+
+.footable, .footable-row-detail-cell,.footable.breakpoint>tbody>tr.footable-row-detail {
+    background-color: transparent !important;
+    border-color: white !important;
+    color: white !important;
+}
+.footable > thead > tr > th, .footable > thead > tr > td,.footable-row-detail-name {
+    color: #b5e853 !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px rgba(181, 232, 83, 0.1),
+               0 0 10px rgba(181, 232, 83, 0.1) !important;
+    font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+}
+.footable > thead > tr > th, .footable > thead > tr > td {
+    border-color: white !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: white;
 }
