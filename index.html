@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/footable.min.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+        <title>Contabilidade Aberta - Cafil</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Contabilidade Aberta</h1>
+                <h2>A contabilidade do cafil</h2>
+                <section id="downloads">
+                    <a href="https://github.com/Cafil/Contabilidade/zipball/master" class="btn">Baixar .zip</a>
+                    <a href="https://github.com/Cafil/Contabilidade/tarball/master" class="btn">Baixar .tar.gz</a>
+                    <a href="https://github.com/Cafil/Contabilidade" class="btn btn-github"><span class="icon"></span>Ver no GitHub</a>
+                </section>
+            </div>
+        </header>
+        <div class="container">
+            <section id="main_content">
+                <h3>
+                    Bem vindo a página da contabildade do cafil.
+                </h3>
+                <p><a href="#">repositório da tabela</a></p>
+                <hr>
+                <h3>
+                    Tabela 2º/2013
+                </h3>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="demo">
+                        <table class="footable metro-blue" data-page-size="5">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th data-hide="phone">
+                                        Data
+                                    </th>
+                                    <th data-hide="phone, tablet">
+                                        Valor
+                                    </th>
+                                    <th>
+                                        Saldo
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aluguel/Junho/2013 - Xerox</td>
+                                    <td>05/06/2013</td>
+                                    <td>1200</td>
+                                    <td>1200</td>
+                                </tr>
+                                <tr>
+                                    <td>Aluguel/Junho/2013 - Papelaria</td>
+                                    <td>05/06/2013</td>
+                                    <td>650</td>
+                                    <td>1850</td>
+                                </tr>
+                                <tr>
+                                    <td>Secretário/Maio/2013 - Lucas (Segunda Parte)</td>
+                                    <td>05/06/2013</td>
+                                    <td>-300</td>
+                                    <td>1550</td>
+                                </tr>
+                                <tr>
+                                    <td>Secretário/Junho/2013 - Lucas (Desligamento)</td>
+                                    <td>05/06/2013</td>
+                                    <td>-500</td>
+                                    <td>1050</td>
+                                </tr>
+                                <tr>
+                                    <td>Sofá/Maio/2013 - Safe Clean</a></td>
+                                    <td>17/06/2013</td>
+                                    <td>-350</td>
+                                    <td>700</td>
+                                </tr>
+                                <tr>
+                                    <td>Aluguel/Julho/2013 - Xerox e Papelaria</td>
+                                    <td>08/08/2013</td>
+                                    <td>925</td>
+                                    <td>1625</td>
+                                </tr>
+                                <tr>
+                                    <td>Faxina/Agosto/2013 - Fátima</td>
+                                    <td>13/08/2013</td>
+                                    <td>-100</td>
+                                    <td>1525</td>
+                                </tr>
+                        </table>
+                    </div>
+                    <p>Hospedado no <a href="http://github.com">Github</a> 
+                </div>
+                <script src="javascripts/jquery-1.9.1.min.js"></script>
+                <script src="javascripts/footable/footable.min.js"></script>
+                <script src="javascripts/numeral.min.js"></script>
+                <script src="javascripts/languages.min.js"></script>
+                <script type="text/javascript">
+                    
+                    $(function() {
+                        $('table').footable();
+                        $('table tbody tr td').each(function(){
+                           if($(this).index() === 3 || 
+                              $(this).index() === 2){
+                               console.log($(this).html());
+                               numeral.language('pt-br');
+                                $(this).html(numeral($(this).html()).format('R$0.0,'));
+                           }
+                        });
+                        $('.colour-switch a').click(function(e) {
+                            e.preventDefault();
+                            $('.colour-switch a').each(function() {
+                                $('table').removeClass($(this).data('class'));
+                            });
+                            $('table').addClass($(this).data('class'));
+                        });
+                    });
+                </script>
+                </body>
+                </html>
